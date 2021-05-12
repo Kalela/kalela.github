@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:potrtfolio/Model/Method.dart';
 import 'package:potrtfolio/Widget/CustomText.dart';
 
 class About extends StatelessWidget {
+  Method method = Method();
+
   Widget technology(BuildContext context, String text) {
     return Row(
       children: [
         Icon(
-          Icons.skip_next,
+          FontAwesomeIcons.briefcase,
           color: Color(0xff64FFDA).withOpacity(0.6),
           size: 14.0,
         ),
@@ -29,7 +33,7 @@ class About extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       height: size.height,
-      width:size.width - 100,
+      width: size.width - 100,
       child: Row(
         children: [
           //About me
@@ -77,24 +81,23 @@ class About extends StatelessWidget {
                   children: [
                     CustomText(
                       text:
-                          "Hello! I'm Tushar, a Freelancer based in Nashik, IN.\n\nI enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performant experiences.\n\n",
+                          "Hello! I'm Philip, a Software Engineer based in Nairobi, KE.\n\nI enjoy creating optimal business solutions through software. My goal is to provide value to my clients by providing expertise in perfomant, robust, maintainable and above all highly valuable products.\n\n",
                       textsize: 16.0,
                       color: Color(0xff828DAA),
                       letterSpacing: 0.75,
                     ),
                     CustomText(
                       text:
-                          "Shortly currently, I am purshuing my Bachlor's degree in Computter science and Engineering at University of Pune, as well as doing freelancing where I work on a wide variety of interesting and meaningful projects on a daily basis.\n\n",
+                          "I am currenly studying to receive Google certification as an Android native developer. I am also working with freelance clients while seeking permanent employment that I would enjoy.\n\n",
                       textsize: 16.0,
                       color: Color(0xff828DAA),
                       letterSpacing: 0.75,
                     ),
                     CustomText(
                       text:
-                          "Here are a few technologies I've been working with recently:\n\n",
+                          "Here are the technologies I've been working with recently:\n\n",
                       textsize: 16.0,
                       color: Color(0xff828DAA),
-                      // fontWeight: FontWeight.w500,
                       letterSpacing: 0.75,
                     ),
                   ],
@@ -103,7 +106,7 @@ class About extends StatelessWidget {
                 Container(
                   height: size.height * 0.15,
                   width: size.width,
-                  child: Wrap(  
+                  child: Wrap(
                     children: [
                       Container(
                         width: size.width * 0.20,
@@ -112,8 +115,8 @@ class About extends StatelessWidget {
                           children: [
                             technology(context, "Dart"),
                             technology(context, "Flutter"),
-                            technology(context, "Firebase"),
-                            technology(context, "UI/UX (Adobe Xd)"),
+                            technology(context, "Android Native"),
+                            technology(context, "Kotlin"),
                           ],
                         ),
                       ),
@@ -122,10 +125,8 @@ class About extends StatelessWidget {
                         height: size.height * 0.15,
                         child: Column(
                           children: [
-                            technology(context, "C/C++, Java."),
-                            technology(context, "HTML & (S)CSS"),
-                            technology(context, "MYSQL"),
-                            technology(context, "Git - Github"),
+                            technology(context, "Java"),
+                            technology(context, "Spring Boot"),
                           ],
                         ),
                       )
@@ -141,7 +142,6 @@ class About extends StatelessWidget {
             child: Container(
               height: size.height / 1.5,
               width: size.width / 2 - 100,
-              // color: Colors.white,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -158,7 +158,13 @@ class About extends StatelessWidget {
                       ),
                     ),
                   ),
-                  CustomImageAnimation()
+                  InkWell(
+                    onTap: () {
+                      method.launchURL(
+                          "https://www.linkedin.com/in/philip-kalela-18b7b414b/");
+                    },
+                    child: CustomImageAnimation(),
+                  )
                 ],
               ),
             ),
@@ -221,7 +227,7 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
             color: Colors.black54,
             child: Image(
               fit: BoxFit.cover,
-              image: AssetImage("images/pic1.jpeg"),
+              image: AssetImage("images/download.png"),
             ),
           ),
           Container(

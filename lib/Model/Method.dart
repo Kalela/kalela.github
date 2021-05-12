@@ -12,7 +12,7 @@ class Method {
 }
 
  launchCaller() async {
-    const url = "tel:9595242507";   
+    const url = "tel:0717174985";   
     if (await canLaunch(url)) {
        await launch(url);
     } else {
@@ -21,8 +21,8 @@ class Method {
 }
 
 launchEmail() async {
-      if (await canLaunch("mailto:champ96k@gmail.com")) {
-        await launch("mailto:champ96k@gmail.com");
+      if (await canLaunch("mailto:philipkalela@gmail.com")) {
+        await launch("mailto:philipkalela@gmail.com");
       } else {
         throw 'Could not launch';
       }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:potrtfolio/Model/Method.dart';
 import 'package:potrtfolio/Widget/CustomText.dart';
 
 class FeatureProject extends StatelessWidget {
@@ -9,28 +10,30 @@ class FeatureProject extends StatelessWidget {
   final String tech1;
   final String tech2;
   final String tech3;
-  final Function ontab;
+  final String githubUrl;
+  final String playStorUrl;
+
+  final Method method = Method();
 
   FeatureProject(
       {this.imagePath,
-      this.ontab,
       this.projectDesc,
       this.projectTitle,
       this.tech1,
       this.tech2,
-      this.tech3});
+      this.tech3,
+      this.githubUrl,
+      this.playStorUrl});
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      height: size.height / 0.999,
-      width: size.width - 100,
-      //color: Colors.tealAccent,
+      // color: Colors.tealAccent,
       child: Column(
         children: [
           Container(
-            height: size.height - 100,
+            height: size.height - 300,
             width: size.width - 84,
             child: Stack(
               children: [
@@ -82,9 +85,7 @@ class FeatureProject extends StatelessWidget {
                   child: Container(
                     height: size.height * 0.10,
                     width: size.width * 0.25,
-                    //color: Colors.indigo,
                     child: Wrap(
-                      // mainAxisAlignment: MainAxisAlignment.end,
                       alignment: WrapAlignment.end,
                       children: [
                         CustomText(
@@ -150,11 +151,24 @@ class FeatureProject extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        IconButton(
-                          icon: FaIcon(FontAwesomeIcons.github),
-                          color: Colors.white.withOpacity(0.3),
-                          onPressed: ontab,
-                        ),
+                        githubUrl != null
+                            ? IconButton(
+                                icon: FaIcon(FontAwesomeIcons.github),
+                                color: Colors.white.withOpacity(0.3),
+                                onPressed: () {
+                                  method.launchURL(githubUrl);
+                                },
+                              )
+                            : SizedBox.shrink(),
+                        playStorUrl != null
+                            ? IconButton(
+                                icon: FaIcon(FontAwesomeIcons.googlePlay),
+                                color: Colors.white.withOpacity(0.3),
+                                onPressed: () {
+                                  method.launchURL(playStorUrl);
+                                },
+                              )
+                            : SizedBox.shrink(),
                       ],
                     ),
                   ),
