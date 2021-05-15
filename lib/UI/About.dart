@@ -4,7 +4,7 @@ import 'package:potrtfolio/Model/Method.dart';
 import 'package:potrtfolio/Widget/CustomText.dart';
 
 class About extends StatelessWidget {
-  Method method = Method();
+  final Method method = Method();
 
   Widget technology(BuildContext context, String text) {
     return Row(
@@ -163,7 +163,12 @@ class About extends StatelessWidget {
                       method.launchURL(
                           "https://www.linkedin.com/in/philip-kalela-18b7b414b/");
                     },
-                    child: CustomImageAnimation(),
+                    child: CustomImageAnimation(
+                      image: "images/download.png",
+                      highlightColor: Color(0xff61F9D5).withOpacity(0.5),
+                      heightRatio: 2,
+                      widthRatio: 5,
+                    ),
                   )
                 ],
               ),
@@ -176,14 +181,25 @@ class About extends StatelessWidget {
 }
 
 class CustomImageAnimation extends StatefulWidget {
-  CustomImageAnimation({Key key}) : super(key: key);
+  CustomImageAnimation(
+      {Key key,
+      @required this.image,
+      @required this.highlightColor,
+      @required this.heightRatio,
+      @required this.widthRatio})
+      : super(key: key);
+
+  final String image;
+  final Color highlightColor;
+  final int heightRatio;
+  final int widthRatio;
 
   @override
   _CustomImageAnimationState createState() => _CustomImageAnimationState();
 }
 
 class _CustomImageAnimationState extends State<CustomImageAnimation> {
-  Color customImageColor = Color(0xff61F9D5).withOpacity(0.5);
+  Color customImageColor = Colors.transparent;
   // ignore: unused_field
   int _enterCounter = 0;
   // ignore: unused_field
@@ -199,14 +215,14 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
 
   void _incrementExit(PointerEvent details) {
     setState(() {
-      customImageColor = Color(0xff61F9D5).withOpacity(0.5);
+      customImageColor = Colors.transparent;
       _exitCounter++;
     });
   }
 
   void _updateLocation(PointerEvent details) {
     setState(() {
-      customImageColor = Colors.transparent;
+      customImageColor = widget.highlightColor.withOpacity(0.5);
       x = details.position.dx;
       y = details.position.dy;
     });
@@ -222,17 +238,17 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
       child: Stack(
         children: [
           Container(
-            height: size.height / 2,
-            width: size.width / 5,
+            height: size.height / widget.heightRatio,
+            width: size.width / widget.widthRatio,
             color: Colors.black54,
             child: Image(
               fit: BoxFit.cover,
-              image: AssetImage("images/download.png"),
+              image: AssetImage(widget.image),
             ),
           ),
           Container(
-            height: size.height / 2,
-            width: size.width / 5,
+            height: size.height / widget.heightRatio,
+            width: size.width / widget.widthRatio,
             color: customImageColor,
           ),
         ],

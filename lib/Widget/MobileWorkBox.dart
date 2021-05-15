@@ -1,44 +1,143 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:potrtfolio/Model/Method.dart';
 import 'package:potrtfolio/Widget/work_custom_data.dart';
 
+import 'CustomText.dart';
+
 class MobileWork extends StatelessWidget {
+  final Method method = Method();
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        WorkCustomData(
-          title: "Sandip Institute Of Engineering & Management Nashik",
-          subTitle:
-              "I am currently pursuing Bachelor's Degree in Computer Science and Engineering \nat Savitribai Phule Pune University",
-          duration: "2016 - Present",
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CustomText(
+              text: "03.",
+              textsize: 20.0,
+              color: Color(0xff61F9D5),
+              fontWeight: FontWeight.w700,
+            ),
+            SizedBox(
+              width: 12.0,
+            ),
+            CustomText(
+              text: "My work experience",
+              textsize: 26.0,
+              color: Color(0xffCCD6F6),
+              fontWeight: FontWeight.w700,
+            ),
+          ],
         ),
-        WorkCustomData(
-          title: "Flutter + Dart Development Winter Bootcamp",
-          subTitle:
-              "The Complete 2020 Flutter + Dart Winter Development Bootcamp at LCO Training Center,\nJaipur, Rajasthan (302017), Covering all the fundamental concepts for Flutter development",
-          duration: "Dec - 2019 to Feb - 2020",
+        Padding(
+          padding: const EdgeInsets.only(top: 30),
         ),
-        WorkCustomData(
-          title:
-              "Freelancer - Flutter | Dart Mobile App Developer | UI - UX Designer",
-          subTitle:
-              "Flutter Developer and experienced programmer with an extensive history of designing and coding \nsolutions. Skilled in Google’s Flutter/Dart, Firebase App and Web development on a global scale. If you \nare looking for someone that you can trust that will complete your app on time and on budget, then \nplease contact me. I have been developing software for 1+ years and take pride in everything I do.",
-          duration: "Oct - 2019 to Nov - 2020",
-        ),
-        WorkCustomData(
-          title: "Mentor at Contributor's Hack, 2020",
-          subTitle:
-              "Working as a mentor in HakinCode organization for Flutter CodeAsylums application \n where I can utilize my skills and be an asset to the organization",
-          duration: "Sep 2020 - Oct 2020",
-        ),
-        WorkCustomData(
-          title: "Flutter Intern at Mind Sports League | Gurgaon In",
-          subTitle:
-              "Building world class Poker Learning platform. Poker Sports League is India’s first poker league is to sportify the game of poker through a unique, team based format",
-          duration: "Nov - 2020 Present",
-        ),
+        Column(children: [
+          Row(
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.deepOrange,
+                child: FaIcon(FontAwesomeIcons.coffee, color: Colors.white),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30),
+              ),
+              WorkCustomData(
+                title: "Mobile Application Developer | Workfleek Technologies",
+                subTitle:
+                    "I worked here for 3 months on contract. I helped design the architechture for M-gari mobile and led the development team as a sort of pseudo team lead.",
+                duration: "November 2020 - February 2021",
+                urls: [
+                  "https://play.google.com/store/apps/details?id=com.workfleek.mgari_flutter",
+                  "https://workfleektech.com/"
+                ],
+                method: method,
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+          ),
+          Row(
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.pink,
+                child:
+                    FaIcon(FontAwesomeIcons.laptopHouse, color: Colors.white),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30),
+              ),
+              WorkCustomData(
+                title: "Associate Software Engineer | Finaccess Kenya",
+                subTitle:
+                    "I started work as a native android developer and transitioned to work as a backend engineer as my UI skills were lacking. I worked with Spring boot.",
+                duration: "December 2019 - November 2020",
+                urls: ["https://finaccess.co/"],
+                method: method,
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+          ),
+          Row(
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Image.asset(
+                  "images/icons/motus_icon.png",
+                  scale: 6,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30),
+              ),
+              WorkCustomData(
+                title: "Game Developer | Motus Nova [through Andela Kenya]",
+                subTitle:
+                    "I helped build and maintain games build with Unity. I was responsible for implementing changes that were required by management. \nMy biggest achievement while working at Motus was working on the company games UI which would go ahead to be used in most of the games.",
+                duration: "April 2019 - November 2019",
+                urls: ["https://motusnova.com/"],
+                method: method,
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+          ),
+          Row(
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Image.asset(
+                  "images/icons/andela_icon.png",
+                  scale: 6,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30),
+              ),
+              Flexible(
+                child: WorkCustomData(
+                  title: "Associate Software Engineer | Andela Kenya",
+                  subTitle:
+                      "At Andela, I was trained to be a proffesional Software Engineer and worked on internal Android Native projects such as Converge(A meeting room management system like Robin) and ART(an asset management system). I got to collaborate with top class Software Engineering talent and learnt a lot from them.",
+                  duration: "March 2018 - April 2020",
+                  urls: ["https://andela.com/"],
+                  method: method,
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+          ),
+        ]),
       ],
     );
   }

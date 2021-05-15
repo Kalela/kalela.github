@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:potrtfolio/Model/Method.dart';
 import 'package:potrtfolio/Widget/CustomText.dart';
 
+import 'About.dart';
+
 class FeatureProject extends StatelessWidget {
   final String imagePath;
   final String projectTitle;
@@ -45,9 +47,11 @@ class FeatureProject extends StatelessWidget {
                     height: size.height * 0.60,
                     width: size.width * 0.5,
                     //color: Colors.redAccent,
-                    child: Image(
-                      fit: BoxFit.contain,
-                      image: AssetImage(imagePath),
+                    child: InkWell(
+                      onTap: () {
+                        method.launchURL(playStorUrl);
+                      },
+                      child: CustomImageAnimation(image: imagePath, highlightColor: Colors.grey.withOpacity(0.5), heightRatio: 1, widthRatio: 1,),
                     ),
                   ),
                 ),
@@ -58,7 +62,7 @@ class FeatureProject extends StatelessWidget {
                   right: 10.0,
                   child: Container(
                     alignment: Alignment.center,
-                    height: size.height * 0.18,
+                    height: size.height * 0.25,
                     width: size.width * 0.35,
                     color: Color(0xff172A45),
                     child: Wrap(
@@ -102,14 +106,14 @@ class FeatureProject extends StatelessWidget {
 
                 // Project Resources
                 Positioned(
-                  top: size.height * 0.36,
-                  right: 10.0,
+                  bottom: 30,
+                  right: 10,
                   child: Container(
                     height: size.height * 0.08,
                     width: size.width * 0.25,
                     // color: Colors.indigo,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                    child: Wrap(
+                      alignment: WrapAlignment.end,
                       children: [
                         CustomText(
                           text: tech1 == null ? "" : tech1,
@@ -147,7 +151,6 @@ class FeatureProject extends StatelessWidget {
                   child: Container(
                     height: size.height * 0.08,
                     width: size.width * 0.25,
-                    // color: Colors.indigo,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -160,6 +163,9 @@ class FeatureProject extends StatelessWidget {
                                 },
                               )
                             : SizedBox.shrink(),
+                        SizedBox(
+                          width: 30,
+                        ),
                         playStorUrl != null
                             ? IconButton(
                                 icon: FaIcon(FontAwesomeIcons.googlePlay),
@@ -169,6 +175,9 @@ class FeatureProject extends StatelessWidget {
                                 },
                               )
                             : SizedBox.shrink(),
+                        SizedBox(
+                          width: 10,
+                        ),
                       ],
                     ),
                   ),

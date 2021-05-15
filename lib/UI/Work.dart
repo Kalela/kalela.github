@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:potrtfolio/Model/Method.dart';
 import 'package:potrtfolio/Widget/CustomText.dart';
 import 'package:potrtfolio/Widget/work_custom_data.dart';
 
@@ -9,179 +10,161 @@ class Work extends StatefulWidget {
 }
 
 class _WorkState extends State<Work> {
+  Method method = Method();
+
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    return ConstrainedBox(
-      constraints: BoxConstraints.tightFor(
-        width: size.width,
-        height: size.height * 1.4,
-      ),
-      child: Column(
+    return Container(
+      child: Stack(
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CustomText(
-                text: "03.",
-                textsize: 20.0,
-                color: Color(0xff61F9D5),
-                fontWeight: FontWeight.w700,
-              ),
-              SizedBox(
-                width: 12.0,
-              ),
-              CustomText(
-                text: "My work experience",
-                textsize: 26.0,
-                color: Color(0xffCCD6F6),
-                fontWeight: FontWeight.w700,
-              ),
-              SizedBox(
-                width: size.width * 0.01,
-              ),
-              Container(
-                width: size.width / 4,
-                height: 1.10,
-                color: Color(0xff303C55),
-              ),
-            ],
+          Positioned(
+            left: 15,
+            bottom: 0,
+            // right: 2,
+            top: 0,
+            child: VerticalDivider(
+              color: Color(0xff64FFDA),
+              thickness: 1.75,
+              width: 10,
+              indent: 50,
+              endIndent: 10,
+            ),
           ),
-          SizedBox(
-            height: size.height * 0.07,
-          ),
-          Row(
+          Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Expanded(
-                flex: 1,
-                child: Container(
-                  height: size.height * 1.2,
-                  child: Stepper(
-                    steps: [
-                      Step(
-                        title: Text(
-                          "Workfleek Technologies",
-                          style: TextStyle(
-                            fontSize: 22.0,
-                            color: Color(0xffCCD6F6),
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        content: Row(
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.pink,
-                              child: FaIcon(FontAwesomeIcons.laptopHouse,
-                                  color: Colors.white),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 30),
-                            ),
-                            WorkCustomData(
-                              title:
-                                  "Mobile Apllication Developer | Workfleek Technologies",
-                              subTitle:
-                                  "I helped build and maintain games with Unity. ",
-                              duration: "November 2020 - February 2021",
-                            ),
-                          ],
-                        ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CustomText(
+                    text: "03.",
+                    textsize: 20.0,
+                    color: Color(0xff61F9D5),
+                    fontWeight: FontWeight.w700,
+                  ),
+                  SizedBox(
+                    width: 12.0,
+                  ),
+                  CustomText(
+                    text: "My work experience",
+                    textsize: 26.0,
+                    color: Color(0xffCCD6F6),
+                    fontWeight: FontWeight.w700,
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30),
+              ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.deepOrange,
+                        child: FaIcon(FontAwesomeIcons.coffee,
+                            color: Colors.white),
                       ),
-                      Step(
-                        title: Text(
-                          "Finaccess Kenya",
-                          style: TextStyle(
-                            fontSize: 22.0,
-                            color: Color(0xffCCD6F6),
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        content: Row(
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.pink,
-                              child: FaIcon(FontAwesomeIcons.laptopHouse,
-                                  color: Colors.white),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 30),
-                            ),
-                            WorkCustomData(
-                              title:
-                                  "Associate Software Engineer | Finaccess Kenya",
-                              subTitle:
-                                  "I helped build and maintain games build with Unity. ",
-                              duration: "December 2019 - November 2020",
-                            ),
-                          ],
-                        ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
                       ),
-                      Step(
-                        title: Text(
-                          "Motus Nova [through Andela Kenya]",
-                          style: TextStyle(
-                            fontSize: 22.0,
-                            color: Color(0xffCCD6F6),
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        content: Row(
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.pink,
-                              child: FaIcon(FontAwesomeIcons.laptopHouse,
-                                  color: Colors.white),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 30),
-                            ),
-                            WorkCustomData(
-                              title:
-                                  "Game Developer | Motus Nova [through Andela Kenya]",
-                              subTitle:
-                                  "I helped build and maintain games build with Unity. ",
-                              duration: "April 2019 - November 2019",
-                            ),
-                          ],
-                        ),
+                      WorkCustomData(
+                        title:
+                            "Mobile Application Developer | Workfleek Technologies",
+                        subTitle:
+                            "I worked here for 3 months on contract. I helped design the architechture for M-gari mobile and led the development team as a sort of pseudo team lead.",
+                        duration: "November 2020 - February 2021",
+                        urls: [
+                          "https://play.google.com/store/apps/details?id=com.workfleek.mgari_flutter",
+                          "https://workfleektech.com/"
+                        ],
+                        method: method,
                       ),
-                      Step(
-                        title: Text(
-                          "Andela Kenya",
-                          style: TextStyle(
-                            fontSize: 22.0,
-                            color: Color(0xffCCD6F6),
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        content: Row(
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.pink,
-                              child: FaIcon(FontAwesomeIcons.laptopHouse,
-                                  color: Colors.white),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 30),
-                            ),
-                            Flexible(
-                              child: WorkCustomData(
-                                title:
-                                    "Associate Software Engineer | Andela Kenya",
-                                subTitle:
-                                    "At Andela, I was trained to be a proffesional Software Engineer and worked on internal Android Native projects such as Converge(A meeting room management system like Robin) and ART(an asset management system). I got to collaborate with top class Software Engineering talent and learnt a lot from them.",
-                                duration: "March 2018 - April 2020",
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
                     ],
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.pink,
+                        child: FaIcon(FontAwesomeIcons.laptopHouse,
+                            color: Colors.white),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                      ),
+                      WorkCustomData(
+                        title: "Associate Software Engineer | Finaccess Kenya",
+                        subTitle:
+                            "I started work as a native android developer and transitioned to work as a backend engineer as my UI skills were lacking. I worked with Spring boot.",
+                        duration: "December 2019 - November 2020",
+                        urls: ["https://finaccess.co/"],
+                        method: method,
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Image.asset(
+                          "images/icons/motus_icon.png",
+                          scale: 6,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                      ),
+                      WorkCustomData(
+                        title:
+                            "Game Developer | Motus Nova [through Andela Kenya]",
+                        subTitle:
+                            "I helped build and maintain games build with Unity. I was responsible for implementing changes that were required by management. \nMy biggest achievement while working at Motus was working on the company games UI which would go ahead to be used in most of the games.",
+                        duration: "April 2019 - November 2019",
+                        urls: ["https://motusnova.com/"],
+                        method: method,
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Image.asset(
+                          "images/icons/andela_icon.png",
+                          scale: 6,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                      ),
+                      Flexible(
+                        child: WorkCustomData(
+                          title: "Associate Software Engineer | Andela Kenya",
+                          subTitle:
+                              "At Andela, I was trained to be a proffesional Software Engineer and worked on internal Android Native projects such as Converge(A meeting room management system like Robin) and ART(an asset management system). I got to collaborate with top class Software Engineering talent and learnt a lot from them.",
+                          duration: "March 2018 - April 2020",
+                          urls: ["https://andela.com/"],
+                          method: method,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                  ),
+                ],
               )
             ],
-          )
+          ),
         ],
       ),
     );
