@@ -569,13 +569,18 @@ class _MobileHomeState extends State<MobileHome> {
 
               MobileWork(),
 
+              SizedBox(
+                height: size.height * 0.07,
+              ),
+
               _wrapScrollTag(
                 index: 3,
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: Container(
-                    width: size.width,
-                    alignment: Alignment.center,
+                child: Container(
+                  width: size.width,
+                  height: size.height,
+                  alignment: Alignment.center,
+                  child: FittedBox(
+                    fit: BoxFit.cover,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
