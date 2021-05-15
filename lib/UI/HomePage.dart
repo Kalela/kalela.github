@@ -75,94 +75,88 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           Container(
-            height: size.height * 0.14,
-            width: size.width,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 16.0, right: 16, bottom: 50),
-              child: Row(
-                children: [
-                  IconButton(
-                      icon: Icon(
-                        FontAwesomeIcons.caretSquareUp,
-                        size: 32.0,
+            padding: EdgeInsets.only(top: 30),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                IconButton(
+                    icon: Icon(
+                      FontAwesomeIcons.caretSquareUp,
+                      size: 32.0,
+                      color: Color(0xff64FFDA),
+                    ),
+                    onPressed: () {
+                      _scrollToIndex(0);
+                    }),
+                Spacer(),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: DefaultTabController(
+                      length: 4,
+                      child: TabBar(
+                        indicatorColor: Colors.transparent,
+                        onTap: (index) async {
+                          _scrollToIndex(index);
+                        },
+                        tabs: [
+                          Tab(
+                            child: AppBarTitle(
+                              text: 'About',
+                            ),
+                          ),
+                          Tab(
+                            child: AppBarTitle(
+                              text: 'Clients/Projects',
+                            ),
+                          ),
+                          Tab(
+                            child: AppBarTitle(
+                              text: 'Work Experience',
+                            ),
+                          ),
+                          Tab(
+                            child: AppBarTitle(
+                              text: 'Contact Us',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  hoverColor: Color(0xff64FFDA).withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(4.0),
+                  onTap: () {
+                    method.launchURL(
+                        "https://drive.google.com/file/d/15WCOCk1XYTcfEyuV-jimGNtvY3UvuLv9/view?usp=sharing");
+                  },
+                  child: Container(
+                    // margin: EdgeInsets.all(0.85),
+                    height: 50,
+                    width: 200,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      border: Border.all(
                         color: Color(0xff64FFDA),
                       ),
-                      onPressed: () {
-                        _scrollToIndex(0);
-                      }),
-                  Spacer(),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: DefaultTabController(
-                        length: 4,
-                        child: TabBar(
-                          indicatorColor: Colors.transparent,
-                          onTap: (index) async {
-                            _scrollToIndex(index);
-                          },
-                          tabs: [
-                            Tab(
-                              child: AppBarTitle(
-                                text: 'About',
-                              ),
-                            ),
-                            Tab(
-                              child: AppBarTitle(
-                                text: 'Clients/Projects',
-                              ),
-                            ),
-                            Tab(
-                              child: AppBarTitle(
-                                text: 'Work Experience',
-                              ),
-                            ),
-                            Tab(
-                              child: AppBarTitle(
-                                text: 'Contact Us',
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                    child: InkWell(
-                      hoverColor: Color(0xff64FFDA).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(4.0),
-                      onTap: () {
-                        method.launchURL(
-                            "https://drive.google.com/file/d/15WCOCk1XYTcfEyuV-jimGNtvY3UvuLv9/view?usp=sharing");
-                      },
-                      child: Container(
-                        margin: EdgeInsets.all(0.85),
-                        height: size.height * 0.07,
-                        width: size.height * 0.20,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Color(0xff64FFDA),
-                          ),
-                          borderRadius: BorderRadius.circular(4.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8.0,
-                          ),
-                          child: Text(
-                            "Resume/CV",
-                            style: TextStyle(
-                              color: Color(0xff64FFDA),
-                            ),
-                          ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8.0,
+                      ),
+                      child: Text(
+                        "Resume/CV",
+                        style: TextStyle(
+                          color: Color(0xff64FFDA),
                         ),
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           Container(
