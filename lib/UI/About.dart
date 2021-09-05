@@ -88,7 +88,7 @@ class About extends StatelessWidget {
                     ),
                     CustomText(
                       text:
-                          "I am currenly studying to receive Google certification as an Android native developer. I am also working with freelance clients while seeking permanent employment that I would enjoy.\n\n",
+                          "I am currenly studying to attain Google certification as an Android native developer. I am also working full time as a mid level full stack developer at theJitu.\n\n",
                       textsize: 16.0,
                       color: Color(0xff828DAA),
                       letterSpacing: 0.75,
@@ -115,8 +115,8 @@ class About extends StatelessWidget {
                           children: [
                             technology(context, "Dart"),
                             technology(context, "Flutter"),
-                            technology(context, "Android Native"),
-                            technology(context, "Kotlin"),
+                            technology(context, "Java"),
+                            technology(context, "Spring Boot"),
                           ],
                         ),
                       ),
@@ -125,8 +125,9 @@ class About extends StatelessWidget {
                         height: size.height * 0.15,
                         child: Column(
                           children: [
-                            technology(context, "Java"),
-                            technology(context, "Spring Boot"),
+                            technology(context, "MyBatis"),
+                            technology(context, "Javascript"),
+                            technology(context, "React"),
                           ],
                         ),
                       )

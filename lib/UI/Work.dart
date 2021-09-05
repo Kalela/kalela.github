@@ -61,6 +61,60 @@ class _WorkState extends State<Work> {
                   Row(
                     children: [
                       CircleAvatar(
+
+                        backgroundColor: Colors.white,
+                        child: Image.asset(
+                          "images/icons/thejitu.png",
+                          scale: 6,
+                           fit: BoxFit.fill,
+
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                      ),
+                      WorkCustomData(
+                        title:
+                            "Software Engineer | TheJitu",
+                        subTitle:
+                            "Currently working at TheJitu as a Full Stack developer. Leveraging Spring Boot Java microservices and a ReactJs Frontend.",
+                        duration: "August 2021 - Present",
+                        urls: [
+                          "https://thejitu.com/"
+                        ],
+                        method: method,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Image.asset(
+                          "images/icons/upwork_icon.png",
+                          scale: 6,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                      ),
+                      WorkCustomData(
+                        title:
+                            "Mobile Application Developer | Upwork",
+                        subTitle:
+                            "I do consultation services on Upwork for mobile application clients. Feel free to contact me there.",
+                        duration: "February 2021 - Present",
+                        urls: [
+                          "https://www.upwork.com/freelancers/~0141ac78cabeab07fa"
+                          
+                        ],
+                        method: method,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
                         backgroundColor: Colors.deepOrange,
                         child: FaIcon(FontAwesomeIcons.coffee,
                             color: Colors.white),
