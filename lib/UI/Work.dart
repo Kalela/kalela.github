@@ -102,7 +102,7 @@ class _WorkState extends State<Work> {
                         title:
                             "Mobile Application Developer | Upwork",
                         subTitle:
-                            "I do consultation services on Upwork for mobile application clients. Feel free to contact me there.",
+                            "I offer consultation services. Mainly developing cross-platform mobile applications. Feel free to contact me there.",
                         duration: "February 2021 - Present",
                         urls: [
                           "https://www.upwork.com/freelancers/~0141ac78cabeab07fa"
@@ -126,7 +126,7 @@ class _WorkState extends State<Work> {
                         title:
                             "Mobile Application Developer | Workfleek Technologies",
                         subTitle:
-                            "I worked here for 3 months on contract. I helped design the architechture for M-gari mobile and led the development team as a sort of pseudo team lead.",
+                            "I worked here for 3 months on contract. I helped design the architecture for M-gari mobile and led the development team as a sort of pseudo team lead.",
                         duration: "November 2020 - February 2021",
                         urls: [
                           "https://play.google.com/store/apps/details?id=com.workfleek.mgari_flutter",
@@ -152,7 +152,7 @@ class _WorkState extends State<Work> {
                       WorkCustomData(
                         title: "Associate Software Engineer | Finaccess Kenya",
                         subTitle:
-                            "I started work as a native android developer and transitioned to work as a backend engineer as my UI skills were lacking. I worked with Spring boot.",
+                            "I started work as a native android developer and transitioned to work as a Spring Boot backend engineer to help offload application work serverside.",
                         duration: "December 2019 - November 2020",
                         urls: ["https://finaccess.co/"],
                         method: method,
@@ -178,7 +178,8 @@ class _WorkState extends State<Work> {
                         title:
                             "Game Developer | Motus Nova [through Andela Kenya]",
                         subTitle:
-                            "I helped build and maintain games build with Unity. I was responsible for implementing changes that were required by management. \nMy biggest achievement while working at Motus was working on the company games UI which would go ahead to be used in most of the games.",
+                            "I helped build and maintain games build with Unity. I was responsible for implementing changes" +
+                             "that were required by management. \nMy biggest achievement while working at Motus was working on the company games UI which would go ahead to be used in most of the games. I learned about the singleton pattern here :)",
                         duration: "April 2019 - November 2019",
                         urls: ["https://motusnova.com/"],
                         method: method,

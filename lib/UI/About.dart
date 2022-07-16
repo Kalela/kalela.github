@@ -81,21 +81,21 @@ class About extends StatelessWidget {
                   children: [
                     CustomText(
                       text:
-                          "Hello! I'm Philip, a Software Engineer based in Nairobi, KE.\n\nI enjoy creating optimal business solutions through software. My goal is to provide value to my clients by providing expertise in perfomant, robust, maintainable and above all highly valuable products.\n\n",
+                          "Hello! I'm Philip.\n\nI enjoy creating optimal business solutions through software. My goal is to provide value to my clients by providing expertise in perfomant, robust, cost effective and maintainable products.\n\n",
                       textsize: 16.0,
                       color: Color(0xff828DAA),
                       letterSpacing: 0.75,
                     ),
                     CustomText(
                       text:
-                          "I am currenly studying to attain Google certification as an Android native developer. I am also working full time as a mid level full stack developer at theJitu.\n\n",
+                          "I am currently working as a full stack java/reactjs engineer at theJitu.com.\n\n",
                       textsize: 16.0,
                       color: Color(0xff828DAA),
                       letterSpacing: 0.75,
                     ),
                     CustomText(
                       text:
-                          "Here are the technologies I've been working with recently:\n\n",
+                          "Here are some of the technologies I've been working with recently:\n\n",
                       textsize: 16.0,
                       color: Color(0xff828DAA),
                       letterSpacing: 0.75,
@@ -128,6 +128,9 @@ class About extends StatelessWidget {
                             technology(context, "MyBatis"),
                             technology(context, "Javascript"),
                             technology(context, "React"),
+                            technology(context, "Groovy"),
+                            technology(context, "AWS"),
+                            technology(context, "Jenkins"),
                           ],
                         ),
                       )

@@ -1,11 +1,11 @@
 {
-    "name": "potrtfolio",
-    "short_name": "potrtfolio",
+    "name": "Philip Kalela",
+    "short_name": "Philip",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Portfolio site for Philip Kalela built with Flutter Web.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

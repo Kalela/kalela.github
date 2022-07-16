@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           Container(
-            padding: EdgeInsets.only(top: 30),
+            padding: EdgeInsets.only(top: 30, left: 30, right: 30),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: BorderRadius.circular(4.0),
                   onTap: () {
                     method.launchURL(
-                        "https://drive.google.com/file/d/1OBjlJlV2EQOwqW5eYny1Q779cR1UTSEh/view?usp=sharing");
+                        "https://philip-kalela-resume.s3.amazonaws.com/Philip+Kalela+Resume.pdf");
                   },
                   child: Container(
                     // margin: EdgeInsets.all(0.85),
@@ -283,7 +283,7 @@ class _HomePageState extends State<HomePage> {
                                           Wrap(
                                             children: [
                                               Text(
-                                                "I'm a Software Engineer based in Nairobi, KE specialized in \nbuilding exceptional mobile applications.",
+                                                "I'm a Software Engineer based in Nairobi, KE \nbuilding exceptional software solutions.",
                                                 style: TextStyle(
                                                   color: Colors.grey,
                                                   fontSize: 16.0,
