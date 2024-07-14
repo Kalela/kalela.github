@@ -16,7 +16,7 @@ class FeatureProject extends StatelessWidget {
   final String? playStoreUrl;
   final String? webUrl;
 
-  final Link method = Link();
+  final Link link = Link();
 
   FeatureProject({
     this.imagePath,
@@ -53,7 +53,10 @@ class FeatureProject extends StatelessWidget {
                     child: InkWell(
                       onTap: () {
                         if (playStoreUrl != null) {
-                          method.launchURL(playStoreUrl!);
+                          link.launchURL(playStoreUrl!);
+                        }
+                        if (webUrl != null) {
+                          link.launchURL(webUrl!);
                         }
                       },
                       child: imagePath != null
@@ -171,7 +174,7 @@ class FeatureProject extends StatelessWidget {
                                 icon: FaIcon(FontAwesomeIcons.github),
                                 color: Colors.white.withOpacity(0.3),
                                 onPressed: () {
-                                  method.launchURL(githubUrl!);
+                                  link.launchURL(githubUrl!);
                                 },
                               )
                             : SizedBox.shrink(),
@@ -183,7 +186,7 @@ class FeatureProject extends StatelessWidget {
                                 icon: FaIcon(FontAwesomeIcons.googlePlay),
                                 color: Colors.white.withOpacity(0.3),
                                 onPressed: () {
-                                  method.launchURL(playStoreUrl!);
+                                  link.launchURL(playStoreUrl!);
                                 },
                               )
                             : SizedBox.shrink(),
@@ -195,7 +198,7 @@ class FeatureProject extends StatelessWidget {
                                 icon: FaIcon(FontAwesomeIcons.globe),
                                 color: Colors.white.withOpacity(0.3),
                                 onPressed: () {
-                                  method.launchURL(playStoreUrl!);
+                                  link.launchURL(webUrl!);
                                 },
                               )
                             : SizedBox.shrink(),
