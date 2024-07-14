@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:potrtfolio/Model/Method.dart';
-import 'package:potrtfolio/Widget/CustomText.dart';
-import 'package:potrtfolio/Widget/work_custom_data.dart';
+import 'package:portfolio/Model/Method.dart';
+import 'package:portfolio/Widget/CustomText.dart';
+import 'package:portfolio/Widget/work_custom_data.dart';
 
 class Work extends StatefulWidget {
   @override

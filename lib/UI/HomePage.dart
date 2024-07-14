@@ -1,13 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:potrtfolio/Model/Method.dart';
-import 'package:potrtfolio/UI/About.dart';
-import 'package:potrtfolio/UI/FeatureProject.dart';
-import 'package:potrtfolio/UI/Work.dart';
-import 'package:potrtfolio/Widget/AppBarTitle.dart';
-import 'package:potrtfolio/Widget/CustomText.dart';
-import 'package:potrtfolio/Widget/MainTitle.dart';
+import 'package:portfolio/Model/Method.dart';
+import 'package:portfolio/UI/About.dart';
+import 'package:portfolio/UI/FeatureProject.dart';
+import 'package:portfolio/UI/Work.dart';
+import 'package:portfolio/Widget/AppBarTitle.dart';
+import 'package:portfolio/Widget/CustomText.dart';
+import 'package:portfolio/Widget/MainTitle.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 class HomePage extends StatefulWidget {

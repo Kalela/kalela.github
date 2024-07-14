@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:potrtfolio/Model/Method.dart';
+import 'package:portfolio/Model/Method.dart';
 
 class WorkCustomData extends StatelessWidget {
   final String title;

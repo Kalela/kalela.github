@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:potrtfolio/Model/Method.dart';
-import 'package:potrtfolio/Widget/CustomText.dart';
+import 'package:portfolio/Model/Method.dart';
+import 'package:portfolio/Widget/CustomText.dart';
 
 class About extends StatelessWidget {
   final Link method = Link();
