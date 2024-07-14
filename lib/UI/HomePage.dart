@@ -349,7 +349,7 @@ class _HomePageState extends State<HomePage> {
                                         index: 1,
                                         child: Column(
                                           children: [
-                                            MainTiitle(
+                                            MainTitle(
                                               number: "02.",
                                               text: "Some of my featured projects",
                                             ),

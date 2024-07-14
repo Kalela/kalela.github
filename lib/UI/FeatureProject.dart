@@ -192,7 +192,7 @@ class FeatureProject extends StatelessWidget {
                         ),
                         webUrl != null
                             ? IconButton(
-                                icon: FaIcon(FontAwesomeIcons.webflow),
+                                icon: FaIcon(FontAwesomeIcons.globe),
                                 color: Colors.white.withOpacity(0.3),
                                 onPressed: () {
                                   method.launchURL(playStoreUrl!);
