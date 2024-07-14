@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -36,14 +35,14 @@ class _MobileHomeState extends State<MobileHome> {
     );
   }
 
-  AutoScrollController _autoScrollController;
+  AutoScrollController? _autoScrollController;
   final scrollDirection = Axis.vertical;
 
   bool isExpaned = true;
 
   bool get _isAppBarExpanded {
-    return _autoScrollController.hasClients &&
-        _autoScrollController.offset > (160 - kToolbarHeight);
+    return _autoScrollController!.hasClients &&
+        _autoScrollController!.offset > (160 - kToolbarHeight);
   }
 
   @override
@@ -71,15 +70,15 @@ class _MobileHomeState extends State<MobileHome> {
   }
 
   Future _scrollToIndex(int index) async {
-    await _autoScrollController.scrollToIndex(index,
+    await _autoScrollController!.scrollToIndex(index,
         preferPosition: AutoScrollPosition.begin);
-    _autoScrollController.highlight(index);
+    _autoScrollController!.highlight(index);
   }
 
-  Widget _wrapScrollTag({int index, Widget child}) {
+  Widget _wrapScrollTag({required int index, required Widget child}) {
     return AutoScrollTag(
       key: ValueKey(index),
-      controller: _autoScrollController,
+      controller: _autoScrollController!,
       index: index,
       child: child,
     );
@@ -87,7 +86,7 @@ class _MobileHomeState extends State<MobileHome> {
 
   @override
   Widget build(BuildContext context) {
-    Method method = Method();
+    Link method = Link();
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xff0A192F),
@@ -141,7 +140,7 @@ class _MobileHomeState extends State<MobileHome> {
                       color: Color(0xff64FFDA),
                     ),
                     title: Text(
-                      "Work Experience",
+                      "Experience",
                       style: TextStyle(color: Color(0xff64FFDA)),
                     ),
                   ),
@@ -506,7 +505,7 @@ class _MobileHomeState extends State<MobileHome> {
 
               MobileProject(
                 image: "images/work/jay_fm_splash.png",
-                playStorUrl:
+                playStoreUrl:
                     "https://play.google.com/store/apps/details?id=com.kalela.jay_fm_flutter",
                 githubUrl: "https://github.com/Kalela/JayFmFlutter",
                 projectDescription:
@@ -519,7 +518,7 @@ class _MobileHomeState extends State<MobileHome> {
 
               MobileProject(
                 image: "images/work/hooli_tours_splash.png",
-                playStorUrl:
+                playStoreUrl:
                     "https://play.google.com/store/apps/details?id=com.hoolitours",
                 githubUrl: null,
                 projectDescription:

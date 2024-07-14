@@ -9,18 +9,18 @@ class MobileWork extends StatefulWidget {
 }
 
 class _MobileWorkState extends State<MobileWork> {
-  final Method method = Method();
+  final Link link = Link();
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
+  
     return Column(
       children: [
         Row(
           children: [
             CircleAvatar(
               backgroundColor: Colors.deepOrange,
-              child: FaIcon(FontAwesomeIcons.coffee, color: Colors.white),
+              child: FaIcon(FontAwesomeIcons.mugSaucer, color: Colors.white),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 30),
@@ -35,7 +35,7 @@ class _MobileWorkState extends State<MobileWork> {
                 "https://play.google.com/store/apps/details?id=com.workfleek.mgari_flutter",
                 "https://workfleektech.com/"
               ],
-              method: method,
+              link: link,
             ),
           ],
         ),
@@ -47,7 +47,7 @@ class _MobileWorkState extends State<MobileWork> {
             CircleAvatar(
               backgroundColor: Colors.pink,
               child:
-                  FaIcon(FontAwesomeIcons.laptopHouse, color: Colors.white),
+                  FaIcon(FontAwesomeIcons.houseLaptop, color: Colors.white),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 30),
@@ -58,7 +58,7 @@ class _MobileWorkState extends State<MobileWork> {
                   "I started work as a native android developer and transitioned to work as a backend engineer as my UI skills were lacking. I worked with Spring boot.",
               duration: "December 2019 - November 2020",
               urls: ["https://finaccess.co/"],
-              method: method,
+              link: link,
             ),
           ],
         ),
@@ -83,7 +83,7 @@ class _MobileWorkState extends State<MobileWork> {
                   "I helped build and maintain games build with Unity. I was responsible for implementing changes that were required by management. \nMy biggest achievement while working at Motus was working on the company games UI which would go ahead to be used in most of the games.",
               duration: "April 2019 - November 2019",
               urls: ["https://motusnova.com/"],
-              method: method,
+              link: link,
             ),
           ],
         ),
@@ -109,7 +109,7 @@ class _MobileWorkState extends State<MobileWork> {
                     "At Andela, I was trained to be a proffesional Software Engineer and worked on internal Android Native projects such as Converge(A meeting room management system like Robin) and ART(an asset management system). I got to collaborate with top class Software Engineering talent and learnt a lot from them.",
                 duration: "March 2018 - April 2020",
                 urls: ["https://andela.com/"],
-                method: method,
+                link: link,
               ),
             ),
           ],

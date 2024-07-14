@@ -5,7 +5,7 @@ class AppBarTitle extends StatelessWidget {
   final String text;
   //final Function ontab;
 
-  AppBarTitle({@required this.text, /*@required this.ontab*/});
+  AppBarTitle({required this.text});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

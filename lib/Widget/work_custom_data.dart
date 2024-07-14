@@ -7,15 +7,15 @@ class WorkCustomData extends StatelessWidget {
   final String subTitle;
   final String duration;
   final List<String> urls;
-  final Method method;
+  final Link? link;
 
   const WorkCustomData(
-      {Key key,
-      @required this.title,
-      @required this.subTitle,
-      @required this.duration,
-      @required this.urls,
-      this.method})
+      {Key? key,
+      required this.title,
+      required this.subTitle,
+      required this.duration,
+      required this.urls,
+      this.link})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,9 @@ class WorkCustomData extends StatelessWidget {
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      method.launchURL(url);
+                      if (link != null) {
+                        link!.launchURL(url);
+                      }
                     },
                 ),
               ),

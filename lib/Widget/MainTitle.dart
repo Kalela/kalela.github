@@ -3,7 +3,7 @@ import 'package:potrtfolio/Widget/CustomText.dart';
 
 class MainTiitle extends StatelessWidget {
   final String number, text;
-  MainTiitle({this.number, this.text});
+  MainTiitle({required this.number, required this.text});
   @override
   Widget build(BuildContext context) {
     return Row(

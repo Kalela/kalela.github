@@ -6,22 +6,24 @@ import 'package:potrtfolio/Widget/CustomText.dart';
 class MobileProject extends StatelessWidget {
   final String image;
   final String projectDescription;
-  final String githubUrl;
-  final String playStorUrl;
-  final Method method = Method();
+  final String? githubUrl;
+  final String? playStoreUrl;
+  final Link method = Link();
 
   MobileProject(
-      {@required this.image,
-      @required this.projectDescription,
-      @required this.githubUrl,
-      @required this.playStorUrl});
+      {required this.image,
+      required this.projectDescription,
+      this.githubUrl,
+      this.playStoreUrl});
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return InkWell(
       onTap: () {
-        method.launchURL(playStorUrl);
+        if (playStoreUrl != null) {
+          method.launchURL(playStoreUrl!);
+        }
       },
       child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
         Container(
@@ -69,19 +71,19 @@ class MobileProject extends StatelessWidget {
                     icon: FaIcon(FontAwesomeIcons.github),
                     color: Colors.white.withOpacity(0.3),
                     onPressed: () {
-                      method.launchURL(githubUrl);
+                      method.launchURL(githubUrl!);
                     },
                   )
                 : SizedBox.shrink(),
             SizedBox(
               width: 30,
             ),
-            playStorUrl != null
+            playStoreUrl != null
                 ? IconButton(
                     icon: FaIcon(FontAwesomeIcons.googlePlay),
                     color: Colors.white.withOpacity(0.3),
                     onPressed: () {
-                      method.launchURL(playStorUrl);
+                      method.launchURL(playStoreUrl!);
                     },
                   )
                 : SizedBox.shrink(),

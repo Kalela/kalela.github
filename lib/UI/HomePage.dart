@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:potrtfolio/Model/Method.dart';
 import 'package:potrtfolio/UI/About.dart';
@@ -8,7 +7,7 @@ import 'package:potrtfolio/UI/FeatureProject.dart';
 import 'package:potrtfolio/UI/Work.dart';
 import 'package:potrtfolio/Widget/AppBarTitle.dart';
 import 'package:potrtfolio/Widget/CustomText.dart';
-import 'package:potrtfolio/Widget/MainTiitle.dart';
+import 'package:potrtfolio/Widget/MainTitle.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,15 +16,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Method method = Method();
-  AutoScrollController _autoScrollController;
+  Link method = Link();
+  AutoScrollController? _autoScrollController;
   final scrollDirection = Axis.vertical;
 
   bool isExpaned = true;
 
   bool get _isAppBarExpanded {
-    return _autoScrollController.hasClients &&
-        _autoScrollController.offset > (160 - kToolbarHeight);
+    return _autoScrollController!.hasClients &&
+        _autoScrollController!.offset > (160 - kToolbarHeight);
   }
 
   @override
@@ -53,15 +52,15 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future _scrollToIndex(int index) async {
-    await _autoScrollController.scrollToIndex(index,
-        preferPosition: AutoScrollPosition.begin);
-    _autoScrollController.highlight(index);
+    await _autoScrollController!
+        .scrollToIndex(index, preferPosition: AutoScrollPosition.begin);
+    _autoScrollController!.highlight(index);
   }
 
-  Widget _wrapScrollTag({int index, Widget child}) {
+  Widget _wrapScrollTag({required int index, required Widget child}) {
     return AutoScrollTag(
       key: ValueKey(index),
-      controller: _autoScrollController,
+      controller: _autoScrollController!,
       index: index,
       child: child,
     );
@@ -81,7 +80,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 IconButton(
                     icon: Icon(
-                      FontAwesomeIcons.caretSquareUp,
+                      FontAwesomeIcons.squareCaretUp,
                       size: 32.0,
                       color: Color(0xff64FFDA),
                     ),
@@ -112,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Tab(
                             child: AppBarTitle(
-                              text: 'Work Experience',
+                              text: 'Experience',
                             ),
                           ),
                           Tab(
@@ -130,7 +129,8 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: BorderRadius.circular(4.0),
                   onTap: () {
                     method.launchURL(
-                        "https://philip-kalela-resume.s3.amazonaws.com/Philip+Kalela+Resume.pdf");
+                      "https://docs.google.com/document/d/1clZP-0ho2EkoRYV1V6URTT4TLuYVSaNNjuSfZkOulqs/edit?usp=sharing",
+                    );
                   },
                   child: Container(
                     // margin: EdgeInsets.all(0.85),
@@ -351,39 +351,39 @@ class _HomePageState extends State<HomePage> {
                                           children: [
                                             MainTiitle(
                                               number: "02.",
-                                              text: "Some of my clients/work",
+                                              text: "Some of my featured projects",
                                             ),
                                             SizedBox(
                                               height: size.height * 0.04,
                                             ),
                                             FeatureProject(
-                                              imagePath:
-                                                  "images/work/jay_fm_splash.png",
-                                              githubUrl:
-                                                  "https://github.com/Kalela/JayFmFlutter",
-                                              playStorUrl:
-                                                  "https://play.google.com/store/apps/details?id=com.kalela.jay_fm_flutter",
+                                              imagePath: "images/work/peja.png",
+                                              webUrl:
+                                                  "https://peja-newsletter.net",
                                               projectDesc:
-                                                  "Jay Fun Media is a local media provider taking the leap to change your content consumption through mobile and internet streaming. Presenting the Jay FM application. Enjoy a variety of music and podcasts brought to you by Jay Fun Media. I was the sole developer on this one. The UI design was inspired by CliffCentral. It features refreshing audio experiences from Kenyan content creators.",
+                                                  "Peja is a daily newsletter that provides  Kenyan news to each subscriber every morning. The mission is to make each subscriber better versed in the country’s state each day.",
                                               projectTitle:
-                                                  "Jay Fun Media|Jay FM",
-                                              tech1: "Flutter|Dart",
-                                              tech2: "Get It   Flutter Redux",
-                                              tech3: "RxDart",
+                                                  "Peja Newsletter|Sonder Softwares",
+                                              tech1: "Spring Boot|Java",
+                                              tech2: "MySql   Kubernetes",
+                                              tech3: "Angular",
                                             ),
-                                            FeatureProject(
-                                              imagePath:
-                                                  "images/work/hooli_tours_splash.png",
-                                              playStorUrl:
-                                                  "https://play.google.com/store/apps/details?id=com.hoolitours",
-                                              projectDesc:
-                                                  "Hooli Tours is a tours company that enables users to quickly buy tickets for tours in Kenya.",
-                                              projectTitle:
-                                                  "Hooli Tours|Hooli Tours App",
-                                              tech1: "Flutter|Dart",
-                                              tech2: "Get It  Flutter Bloc",
-                                              tech3: "Firebase Firestore/Auth",
-                                            ),
+                                            // FeatureProject(
+                                            //   imagePath:
+                                            //       "images/work/jay_fm_splash.png",
+                                            //   githubUrl:
+                                            //       "https://github.com/Kalela/JayFmFlutter",
+                                            //   playStoreUrl:
+                                            //       "https://play.google.com/store/apps/details?id=com.kalela.jay_fm_flutter",
+                                            //   projectDesc:
+                                            //       "Jay Fun Media is a local media provider taking the leap to change your content consumption through mobile and internet streaming. Presenting the Jay FM application. Enjoy a variety of music and podcasts brought to you by Jay Fun Media. I was the sole developer on this one. The UI design was inspired by CliffCentral. It features refreshing audio experiences from Kenyan content creators.",
+                                            //   projectTitle:
+                                            //       "Jay Fun Media|Jay FM",
+                                            //   tech1: "Flutter|Dart",
+                                            //   tech2: "Get It   Flutter Redux",
+                                            //   tech3: "RxDart",
+                                            // ),
+                                            
                                           ],
                                         ),
                                       ),

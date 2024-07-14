@@ -10,7 +10,7 @@ class Work extends StatefulWidget {
 }
 
 class _WorkState extends State<Work> {
-  Method method = Method();
+  Link link = Link();
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +64,34 @@ class _WorkState extends State<Work> {
 
                         backgroundColor: Colors.white,
                         child: Image.asset(
+                          "images/icons/carepay_icon.jpeg",
+                          scale: 6,
+                           fit: BoxFit.fill,
+
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                      ),
+                      WorkCustomData(
+                        title:
+                            "Software Engineer | Carepay International",
+                        subTitle:
+                            "We digitize and simplify the healthcare process between patients, healthcare providers and insurance companies.",
+                        duration: "January 2022 - Present",
+                        urls: [
+                          "https://www.carepay.com"
+                        ],
+                        link: link,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+
+                        backgroundColor: Colors.white,
+                        child: Image.asset(
                           "images/icons/thejitu.png",
                           scale: 6,
                            fit: BoxFit.fill,
@@ -82,7 +110,7 @@ class _WorkState extends State<Work> {
                         urls: [
                           "https://thejitu.com/"
                         ],
-                        method: method,
+                        link: link,
                       ),
                     ],
                   ),
@@ -108,7 +136,7 @@ class _WorkState extends State<Work> {
                           "https://www.upwork.com/freelancers/~0141ac78cabeab07fa"
                           
                         ],
-                        method: method,
+                        link: link,
                       ),
                     ],
                   ),
@@ -132,7 +160,7 @@ class _WorkState extends State<Work> {
                           "https://play.google.com/store/apps/details?id=com.workfleek.mgari_flutter",
                           "https://workfleektech.com/"
                         ],
-                        method: method,
+                        link: link,
                       ),
                     ],
                   ),
@@ -155,7 +183,7 @@ class _WorkState extends State<Work> {
                             "I started work as a native android developer and transitioned to work as a Spring Boot backend engineer to help offload application work serverside.",
                         duration: "December 2019 - November 2020",
                         urls: ["https://finaccess.co/"],
-                        method: method,
+                        link: link,
                       ),
                     ],
                   ),
@@ -182,7 +210,7 @@ class _WorkState extends State<Work> {
                              "that were required by management. \nMy biggest achievement while working at Motus was working on the company games UI which would go ahead to be used in most of the games. I learned about the singleton pattern here :)",
                         duration: "April 2019 - November 2019",
                         urls: ["https://motusnova.com/"],
-                        method: method,
+                        link: link,
                       ),
                     ],
                   ),
@@ -208,7 +236,7 @@ class _WorkState extends State<Work> {
                               "At Andela, I was trained to be a proffesional Software Engineer and worked on internal Android Native projects such as Converge(A meeting room management system like Robin) and ART(an asset management system). I got to collaborate with top class Software Engineering talent and learnt a lot from them.",
                           duration: "March 2018 - April 2020",
                           urls: ["https://andela.com/"],
-                          method: method,
+                          link: link,
                         ),
                       ),
                     ],

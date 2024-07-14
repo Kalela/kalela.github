@@ -6,26 +6,29 @@ import 'package:potrtfolio/Widget/CustomText.dart';
 import 'About.dart';
 
 class FeatureProject extends StatelessWidget {
-  final String imagePath;
+  final String? imagePath;
   final String projectTitle;
   final String projectDesc;
-  final String tech1;
-  final String tech2;
-  final String tech3;
-  final String githubUrl;
-  final String playStorUrl;
+  final String? tech1;
+  final String? tech2;
+  final String? tech3;
+  final String? githubUrl;
+  final String? playStoreUrl;
+  final String? webUrl;
 
-  final Method method = Method();
+  final Link method = Link();
 
-  FeatureProject(
-      {this.imagePath,
-      this.projectDesc,
-      this.projectTitle,
-      this.tech1,
-      this.tech2,
-      this.tech3,
-      this.githubUrl,
-      this.playStorUrl});
+  FeatureProject({
+    this.imagePath,
+    required this.projectDesc,
+    required this.projectTitle,
+    this.tech1,
+    this.tech2,
+    this.tech3,
+    this.githubUrl,
+    this.playStoreUrl,
+    this.webUrl,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +52,18 @@ class FeatureProject extends StatelessWidget {
                     //color: Colors.redAccent,
                     child: InkWell(
                       onTap: () {
-                        method.launchURL(playStorUrl);
+                        if (playStoreUrl != null) {
+                          method.launchURL(playStoreUrl!);
+                        }
                       },
-                      child: CustomImageAnimation(image: imagePath, highlightColor: Colors.grey.withOpacity(0.5), heightRatio: 1, widthRatio: 1,),
+                      child: imagePath != null
+                          ? CustomImageAnimation(
+                              image: imagePath!,
+                              highlightColor: Colors.grey.withOpacity(0.5),
+                              heightRatio: 1,
+                              widthRatio: 1,
+                            )
+                          : null,
                     ),
                   ),
                 ),
@@ -116,7 +128,7 @@ class FeatureProject extends StatelessWidget {
                       alignment: WrapAlignment.end,
                       children: [
                         CustomText(
-                          text: tech1 == null ? "" : tech1,
+                          text: tech1 ?? "",
                           textsize: 14,
                           color: Colors.grey,
                           letterSpacing: 1.75,
@@ -125,7 +137,7 @@ class FeatureProject extends StatelessWidget {
                           width: 16.0,
                         ),
                         CustomText(
-                          text: tech2 == null ? "" : tech2,
+                          text: tech2 ?? "",
                           textsize: 14,
                           color: Colors.grey,
                           letterSpacing: 1.75,
@@ -134,7 +146,7 @@ class FeatureProject extends StatelessWidget {
                           width: 16.0,
                         ),
                         CustomText(
-                          text: tech3 == null ? "" : tech3,
+                          text: tech3 ?? "",
                           textsize: 14,
                           color: Colors.grey,
                           letterSpacing: 1.75,
@@ -159,19 +171,31 @@ class FeatureProject extends StatelessWidget {
                                 icon: FaIcon(FontAwesomeIcons.github),
                                 color: Colors.white.withOpacity(0.3),
                                 onPressed: () {
-                                  method.launchURL(githubUrl);
+                                  method.launchURL(githubUrl!);
                                 },
                               )
                             : SizedBox.shrink(),
                         SizedBox(
                           width: 30,
                         ),
-                        playStorUrl != null
+                        playStoreUrl != null
                             ? IconButton(
                                 icon: FaIcon(FontAwesomeIcons.googlePlay),
                                 color: Colors.white.withOpacity(0.3),
                                 onPressed: () {
-                                  method.launchURL(playStorUrl);
+                                  method.launchURL(playStoreUrl!);
+                                },
+                              )
+                            : SizedBox.shrink(),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        webUrl != null
+                            ? IconButton(
+                                icon: FaIcon(FontAwesomeIcons.webflow),
+                                color: Colors.white.withOpacity(0.3),
+                                onPressed: () {
+                                  method.launchURL(playStoreUrl!);
                                 },
                               )
                             : SizedBox.shrink(),

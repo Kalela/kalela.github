@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class OSImages extends StatelessWidget {
   final String image;
-  OSImages({this.image});
+  OSImages({required this.image});
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;

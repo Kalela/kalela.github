@@ -1,31 +1,28 @@
 import 'package:url_launcher/url_launcher.dart';
 
-class Method {
-
-  launchURL(String link) async {
-  var url = link;
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
- launchCaller() async {
-    const url = "tel:0717174985";   
-    if (await canLaunch(url)) {
-       await launch(url);
+class Link {
+  launchURL(String url) async {
+    if (await canLaunchUrl(Uri.dataFromString(url))) {
+      await launchUrl(Uri.dataFromString(url));
     } else {
       throw 'Could not launch $url';
-    }   
-}
-
-launchEmail() async {
-      if (await canLaunch("mailto:philipkalela@gmail.com")) {
-        await launch("mailto:philipkalela@gmail.com");
-      } else {
-        throw 'Could not launch';
-      }
     }
+  }
 
+  launchCaller() async {
+    const url = "tel:+254717174985";
+    if (await canLaunchUrl(Uri.dataFromString(url))) {
+      await launchUrl(Uri.dataFromString(url));
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  launchEmail() async {
+    if (await canLaunchUrl(Uri.dataFromString("mailto:philipkalela@gmail.com"))) {
+      await launchUrl(Uri.dataFromString("mailto:philipkalela@gmail.com"));
+    } else {
+      throw 'Could not launch';
+    }
+  }
 }

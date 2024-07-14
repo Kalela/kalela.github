@@ -4,7 +4,7 @@ import 'package:potrtfolio/Model/Method.dart';
 import 'package:potrtfolio/Widget/CustomText.dart';
 
 class About extends StatelessWidget {
-  final Method method = Method();
+  final Link method = Link();
 
   Widget technology(BuildContext context, String text) {
     return Row(
@@ -88,7 +88,7 @@ class About extends StatelessWidget {
                     ),
                     CustomText(
                       text:
-                          "I am currently working as a full stack java/reactjs engineer at theJitu.com.\n\n",
+                          "I am currently working as a backend software engineer at Carepay International.\n\n",
                       textsize: 16.0,
                       color: Color(0xff828DAA),
                       letterSpacing: 0.75,
@@ -113,10 +113,10 @@ class About extends StatelessWidget {
                         height: size.height * 0.15,
                         child: Column(
                           children: [
-                            technology(context, "Dart"),
-                            technology(context, "Flutter"),
                             technology(context, "Java"),
                             technology(context, "Spring Boot"),
+                            technology(context, "Dart"),
+                            technology(context, "Flutter"),
                           ],
                         ),
                       ),
@@ -125,12 +125,9 @@ class About extends StatelessWidget {
                         height: size.height * 0.15,
                         child: Column(
                           children: [
-                            technology(context, "MyBatis"),
-                            technology(context, "Javascript"),
-                            technology(context, "React"),
-                            technology(context, "Groovy"),
                             technology(context, "AWS"),
-                            technology(context, "Jenkins"),
+                            technology(context, "Kubernetes"),
+                            technology(context, "Bitbucket Pipelines"),
                           ],
                         ),
                       )
@@ -186,11 +183,11 @@ class About extends StatelessWidget {
 
 class CustomImageAnimation extends StatefulWidget {
   CustomImageAnimation(
-      {Key key,
-      @required this.image,
-      @required this.highlightColor,
-      @required this.heightRatio,
-      @required this.widthRatio})
+      {Key? key,
+      required this.image,
+      required this.highlightColor,
+      required this.heightRatio,
+      required this.widthRatio})
       : super(key: key);
 
   final String image;
